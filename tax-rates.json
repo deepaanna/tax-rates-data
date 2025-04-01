@@ -1,50 +1,608 @@
 {
-  "us": {
-    "currency": "$",
-    "single": [
-      { "min": 0, "max": 11000, "rate": 0.10 },
-      { "min": 11001, "max": 44725, "rate": 0.12, "base": 1100 },
-      { "min": 44726, "max": 95375, "rate": 0.22, "base": 5147 },
-      { "min": 95376, "max": Infinity, "rate": 0.24, "base": 16290 }
-    ],
-    "married": [
-      { "min": 0, "max": 22000, "rate": 0.10 },
-      { "min": 22001, "max": 89450, "rate": 0.12, "base": 2200 },
-      { "min": 89451, "max": 190750, "rate": 0.22, "base": 10294 },
-      { "min": 190751, "max": Infinity, "rate": 0.24, "base": 32580 }
-    ],
-    "standardDeduction": 13850
-  },
-  "uk": {
-    "currency": "£",
-    "single": [
-      { "min": 0, "max": 12570, "rate": 0 },
-      { "min": 12571, "max": 50270, "rate": 0.20, "base": 0 },
-      { "min": 50271, "max": 125140, "rate": 0.40, "base": 7540 },
-      { "min": 125141, "max": Infinity, "rate": 0.45, "base": 45156 }
-    ],
-    "married": [
-      { "min": 0, "max": 12570, "rate": 0 },
-      { "min": 12571, "max": 50270, "rate": 0.20, "base": 0 },
-      { "min": 50271, "max": 125140, "rate": 0.40, "base": 7540 },
-      { "min": 125141, "max": Infinity, "rate": 0.45, "base": 45156 }
-    ],
-    "standardDeduction": 0
-  },
-  "ca": {
-    "currency": "$",
-    "single": [
-      { "min": 0, "max": 55867, "rate": 0.15 },
-      { "min": 55868, "max": 111733, "rate": 0.205, "base": 8380 },
-      { "min": 111734, "max": 173205, "rate": 0.26, "base": 19240 },
-      { "min": 173206, "max": Infinity, "rate": 0.29, "base": 35228 }
-    ],
-    "married": [
-      { "min": 0, "max": 111734, "rate": 0.15 },
-      { "min": 111735, "max": 223466, "rate": 0.205, "base": 16760 },
-      { "min": 223467, "max": 346410, "rate": 0.26, "base": 38480 },
-      { "min": 346411, "max": Infinity, "rate": 0.29, "base": 70456 }
-    ],
-    "standardDeduction": 15547
-  }
+    "us": {
+        "currency": "$",
+        "single": [
+            {
+                "min": 0,
+                "max": 11000,
+                "rate": 0.1
+            },
+            {
+                "min": 11001,
+                "max": 44725,
+                "rate": 0.12,
+                "base": 1100
+            },
+            {
+                "min": 44726,
+                "max": 95375,
+                "rate": 0.22,
+                "base": 5147
+            },
+            {
+                "min": 95376,
+                "max": 100000000000,
+                "rate": 0.24,
+                "base": 16290
+            }
+        ],
+        "standardDeduction": 13850,
+        "childCredit": 2000,
+        "maxChildren": 3,
+        "selfEmploymentTax": 0.153,
+        "stateTaxes": {
+            "CA": {
+                "rate": 0.093,
+                "maxIncome": 1000000
+            },
+            "TX": {
+                "rate": 0
+            }
+        }
+    },
+    "uk": {
+        "currency": "£",
+        "single": [
+            {
+                "min": 0,
+                "max": 12570,
+                "rate": 0
+            },
+            {
+                "min": 12571,
+                "max": 50270,
+                "rate": 0.2,
+                "base": 0
+            },
+            {
+                "min": 50271,
+                "max": 125140,
+                "rate": 0.4,
+                "base": 7540
+            },
+            {
+                "min": 125141,
+                "max": 100000000000,
+                "rate": 0.45,
+                "base": 45156
+            }
+        ],
+        "standardDeduction": 0
+    },
+    "ca": {
+        "currency": "$",
+        "single": [
+            {
+                "min": 0,
+                "max": 55867,
+                "rate": 0.15
+            },
+            {
+                "min": 55868,
+                "max": 111733,
+                "rate": 0.205,
+                "base": 8380
+            }
+        ],
+        "standardDeduction": 15547
+    },
+    "au": {
+        "currency": "$",
+        "single": [
+            {
+                "min": 0,
+                "max": 18200,
+                "rate": 0
+            },
+            {
+                "min": 18201,
+                "max": 45000,
+                "rate": 0.19,
+                "base": 0
+            }
+        ],
+        "standardDeduction": 0
+    },
+    "de": {
+        "currency": "€",
+        "single": [
+            {
+                "min": 0,
+                "max": 11693,
+                "rate": 0
+            },
+            {
+                "min": 11694,
+                "max": 66760,
+                "rate": 0.24,
+                "base": 0
+            }
+        ],
+        "standardDeduction": 0
+    },
+    "fr": {
+        "currency": "€",
+        "single": [
+            {
+                "min": 0,
+                "max": 10777,
+                "rate": 0
+            },
+            {
+                "min": 10778,
+                "max": 27478,
+                "rate": 0.11,
+                "base": 0
+            }
+        ],
+        "standardDeduction": 0
+    },
+    "jp": {
+        "currency": "¥",
+        "single": [
+            {
+                "min": 0,
+                "max": 1950000,
+                "rate": 0.05
+            },
+            {
+                "min": 1950001,
+                "max": 3300000,
+                "rate": 0.1,
+                "base": 97500
+            }
+        ],
+        "standardDeduction": 480000
+    },
+    "it": {
+        "currency": "€",
+        "single": [
+            {
+                "min": 0,
+                "max": 15000,
+                "rate": 0.23
+            }
+        ],
+        "standardDeduction": 0
+    },
+    "es": {
+        "currency": "€",
+        "single": [
+            {
+                "min": 0,
+                "max": 12450,
+                "rate": 0.19
+            }
+        ],
+        "standardDeduction": 5550
+    },
+    "br": {
+        "currency": "R$",
+        "single": [
+            {
+                "min": 0,
+                "max": 22847,
+                "rate": 0
+            }
+        ],
+        "standardDeduction": 0
+    },
+    "in": {
+        "currency": "₹",
+        "single": [
+            {
+                "min": 0,
+                "max": 300000,
+                "rate": 0
+            }
+        ],
+        "standardDeduction": 50000
+    },
+    "za": {
+        "currency": "R",
+        "single": [
+            {
+                "min": 0,
+                "max": 237100,
+                "rate": 0.18
+            }
+        ],
+        "standardDeduction": 0
+    },
+    "mx": {
+        "currency": "$",
+        "single": [
+            {
+                "min": 0,
+                "max": 7468,
+                "rate": 0.0192
+            }
+        ],
+        "standardDeduction": 0
+    },
+    "ru": {
+        "currency": "₽",
+        "single": [
+            {
+                "min": 0,
+                "max": 5000000,
+                "rate": 0.13
+            }
+        ],
+        "standardDeduction": 0
+    },
+    "kr": {
+        "currency": "₩",
+        "single": [
+            {
+                "min": 0,
+                "max": 12000000,
+                "rate": 0.06
+            }
+        ],
+        "standardDeduction": 0
+    },
+    "se": {
+        "currency": "kr",
+        "single": [
+            {
+                "min": 0,
+                "max": 598300,
+                "rate": 0.32
+            }
+        ],
+        "standardDeduction": 0
+    },
+    "cn": {
+        "currency": "¥",
+        "single": [
+            {
+                "min": 0,
+                "max": 36000,
+                "rate": 0.03
+            }
+        ],
+        "standardDeduction": 60000
+    },
+    "ar": {
+        "currency": "$",
+        "single": [
+            {
+                "min": 0,
+                "max": 173536,
+                "rate": 0.05
+            }
+        ],
+        "standardDeduction": 0
+    },
+    "tr": {
+        "currency": "₺",
+        "single": [
+            {
+                "min": 0,
+                "max": 110000,
+                "rate": 0.15
+            }
+        ],
+        "standardDeduction": 0
+    },
+    "sa": {
+        "currency": "SR",
+        "single": [
+            {
+                "min": 0,
+                "max": 100000000000,
+                "rate": 0
+            }
+        ],
+        "standardDeduction": 0
+    },
+    "id": {
+        "currency": "Rp",
+        "single": [
+            {
+                "min": 0,
+                "max": 60000000,
+                "rate": 0.05
+            }
+        ],
+        "standardDeduction": 0
+    },
+    "nl": {
+        "currency": "€",
+        "single": [
+            {
+                "min": 0,
+                "max": 75518,
+                "rate": 0.365
+            }
+        ],
+        "standardDeduction": 0
+    },
+    "dk": {
+        "currency": "kr",
+        "single": [
+            {
+                "min": 0,
+                "max": 588900,
+                "rate": 0.559
+            }
+        ],
+        "standardDeduction": 0
+    },
+    "no": {
+        "currency": "kr",
+        "single": [
+            {
+                "min": 0,
+                "max": 643800,
+                "rate": 0.34
+            }
+        ],
+        "standardDeduction": 0
+    },
+    "ch": {
+        "currency": "CHF",
+        "single": [
+            {
+                "min": 0,
+                "max": 18800,
+                "rate": 0
+            }
+        ],
+        "standardDeduction": 0
+    },
+    "nz": {
+        "currency": "$",
+        "single": [
+            {
+                "min": 0,
+                "max": 14000,
+                "rate": 0.105
+            }
+        ],
+        "standardDeduction": 0
+    },
+    "ie": {
+        "currency": "€",
+        "single": [
+            {
+                "min": 0,
+                "max": 42400,
+                "rate": 0.2
+            }
+        ],
+        "standardDeduction": 0
+    },
+    "pl": {
+        "currency": "zł",
+        "single": [
+            {
+                "min": 0,
+                "max": 120000,
+                "rate": 0.17
+            }
+        ],
+        "standardDeduction": 0
+    },
+    "cl": {
+        "currency": "$",
+        "single": [
+            {
+                "min": 0,
+                "max": 8417040,
+                "rate": 0
+            }
+        ],
+        "standardDeduction": 0
+    },
+    "ng": {
+        "currency": "₦",
+        "single": [
+            {
+                "min": 0,
+                "max": 300000,
+                "rate": 0.07
+            }
+        ],
+        "standardDeduction": 0
+    },
+    "eg": {
+        "currency": "£",
+        "single": [
+            {
+                "min": 0,
+                "max": 600000,
+                "rate": 0
+            }
+        ],
+        "standardDeduction": 0
+    },
+    "th": {
+        "currency": "฿",
+        "single": [
+            {
+                "min": 0,
+                "max": 150000,
+                "rate": 0
+            }
+        ],
+        "standardDeduction": 0
+    },
+    "my": {
+        "currency": "RM",
+        "single": [
+            {
+                "min": 0,
+                "max": 5000,
+                "rate": 0
+            }
+        ],
+        "standardDeduction": 9000
+    },
+    "ph": {
+        "currency": "₱",
+        "single": [
+            {
+                "min": 0,
+                "max": 250000,
+                "rate": 0
+            }
+        ],
+        "standardDeduction": 0
+    },
+    "vn": {
+        "currency": "₫",
+        "single": [
+            {
+                "min": 0,
+                "max": 10000000,
+                "rate": 0.05
+            }
+        ],
+        "standardDeduction": 11000000
+    },
+    "sg": {
+        "currency": "$",
+        "single": [
+            {
+                "min": 0,
+                "max": 20000,
+                "rate": 0
+            }
+        ],
+        "standardDeduction": 0
+    },
+    "ae": {
+        "currency": "AED",
+        "single": [
+            {
+                "min": 0,
+                "max": 100000000000,
+                "rate": 0
+            }
+        ],
+        "standardDeduction": 0
+    },
+    "il": {
+        "currency": "₪",
+        "single": [
+            {
+                "min": 0,
+                "max": 75120,
+                "rate": 0.1
+            }
+        ],
+        "standardDeduction": 0
+    },
+    "pt": {
+        "currency": "€",
+        "single": [
+            {
+                "min": 0,
+                "max": 11284,
+                "rate": 0.145
+            }
+        ],
+        "standardDeduction": 0
+    },
+    "gr": {
+        "currency": "€",
+        "single": [
+            {
+                "min": 0,
+                "max": 10000,
+                "rate": 0.09
+            }
+        ],
+        "standardDeduction": 0
+    },
+    "fi": {
+        "currency": "€",
+        "single": [
+            {
+                "min": 0,
+                "max": 20500,
+                "rate": 0.125
+            }
+        ],
+        "standardDeduction": 0
+    },
+    "be": {
+        "currency": "€",
+        "single": [
+            {
+                "min": 0,
+                "max": 15200,
+                "rate": 0.25
+            }
+        ],
+        "standardDeduction": 0
+    },
+    "at": {
+        "currency": "€",
+        "single": [
+            {
+                "min": 0,
+                "max": 11000,
+                "rate": 0
+            }
+        ],
+        "standardDeduction": 0
+    },
+    "cz": {
+        "currency": "Kč",
+        "single": [
+            {
+                "min": 0,
+                "max": 1780920,
+                "rate": 0.15
+            }
+        ],
+        "standardDeduction": 0
+    },
+    "hu": {
+        "currency": "Ft",
+        "single": [
+            {
+                "min": 0,
+                "max": 100000000000,
+                "rate": 0.15
+            }
+        ],
+        "standardDeduction": 0
+    },
+    "co": {
+        "currency": "$",
+        "single": [
+            {
+                "min": 0,
+                "max": 42411000,
+                "rate": 0
+            }
+        ],
+        "standardDeduction": 0
+    },
+    "pe": {
+        "currency": "S/",
+        "single": [
+            {
+                "min": 0,
+                "max": 23000,
+                "rate": 0.08
+            }
+        ],
+        "standardDeduction": 0
+    },
+    "pk": {
+        "currency": "₨",
+        "single": [
+            {
+                "min": 0,
+                "max": 600000,
+                "rate": 0
+            }
+        ],
+        "standardDeduction": 0
+    }
 }
